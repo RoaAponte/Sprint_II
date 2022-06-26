@@ -1,0 +1,54 @@
+body{
+    width: 80%;
+    margin: auto;
+    background-color: rgba(138, 230, 167, 90);
+}
+
+.logo{
+    position: absolute;
+    max-width: 100px;
+    padding-left: 1%;
+    padding-top: 10px;
+}
+
+.title{
+    padding-left: 25%;;
+}
+
+#nuevoJuego{
+    width: 35%;
+    padding: 10px;
+    font-size: 18px;    
+    font-weight: bold;
+    color: black;
+    background: rgba(139, 252, 207, 99);
+    border: none;
+    border-radius: 10px;
+    transition: 400ms;
+    cursor: pointer;
+    margin-right: 2em;
+}
+
+#nuevoJuego:hover{
+    background: rgb(133, 242, 229, 95);
+    transform: scale(1.2) rotate(10deg);
+}
+
+#rendirse{
+    width: 35%;
+    padding: 10px;
+    font-size: 18px;    
+    font-weight: bold;
+    color: black;
+    background: rgba(235, 175, 148, 92);
+    border: none;
+    border-radius: 10px;
+    transition: 400ms;
+    cursor: pointer;
+}
+
+#rendirse:hover{
+    background: rgb(246, 145, 143, 96);
+    transform: scale(1.2) rotate(-10deg);
+}
+
