@@ -18,6 +18,13 @@ body{
     margin-left: 10%;
 }
 
+.title2{
+    padding-left: 25%;
+    padding-top: 1%;
+    margin: auto;
+    margin-left: 10%;
+}
+
 #iniciarJuego{
     width: 45%;
     padding: 15px;

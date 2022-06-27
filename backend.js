@@ -1,5 +1,5 @@
-var palabrasinit = ["CARTON", "LATAS", "VIDRIO", "BATERIAS", "PAPEL", "PLASTICOS", "CONTAMINAR"];
-var palabras = localStorage.getItem("palabras");
+var palabrasinit = ["CARTON", "LATAS", "VIDRIO", "BATERIAS", "PAPEL", "PLASTICOS", "CONTAMINAR", "OZONO"];
+var palabras = localStorage.getItem("Palabras");
 palabras = JSON.parse(palabras);
 
 var letras =[];
