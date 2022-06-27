@@ -1,5 +1,7 @@
-var palabras = ["CARTON", "LATAS", "VIDRIO", "BATERIAS", "PAPEL", "PLASTICOS", "CONTAMINAR"];
-var tablero = document.getElementById("horca").getContext("2d");
+var palabrasinit = ["CARTON", "LATAS", "VIDRIO", "BATERIAS", "PAPEL", "PLASTICOS", "CONTAMINAR"];
+var palabras = localStorage.getItem("palabras");
+palabras = JSON.parse(palabras);
+
 var letras =[];
 var palabraCorrecta = "";
 var errores = 8;
@@ -7,48 +9,13 @@ var aciertos = 0;
 
 console.log(palabras)
 
+if(palabras ==null){palabras = palabrasinit}
+
 function escogerPalabraSecreta(){
     var palabra = palabras[Math.floor(Math.random()*palabras.length)]
     palabraSecreta = palabra
     console.log(palabraSecreta)
     return palabraSecreta
-}
-
-function dibujarLineas(){
-    tablero.lineWidth = 6
-    tablero.lineCap = "round"
-    tablero.lineJoin = "round"
-    tablero.strokeStyle = "#0A3871"
-    tablero.beginPath()
-
-    var ancho = 650/palabraSecreta.length
-    for (let i = 0; i < palabraSecreta.length; i++){
-        tablero.moveTo(280+(ancho*i), 440)
-        tablero.lineTo(330+(ancho*i), 440)
-    }
-    tablero.stroke()
-    tablero.closePath()
-}dibujarLineas(escogerPalabraSecreta())
-
-function escribirLetraCorrecta(index){
-    tablero.font = "bold 52px Raleway";
-    tablero.lineWidth = 6
-    tablero.lineCap = "round"
-    tablero.lineJoin = "round"
-    tablero.fillStyle = "#0A3871"
-
-    var ancho = 650/palabraSecreta.length
-    tablero.fillText(palabraSecreta[index], 290+(ancho*index), 420)
-}
-
-function escribirLetraIncorrecta(letra, errosLeft){
-    tablero.font = "bold 40px Raleway";
-    tablero.lineWidth = 8
-    tablero.lineCap = "round"
-    tablero.lineJoin = "round"
-    tablero.fillStyle = "#0A3871"
-
-    tablero.fillText(letra, 330+(40*(10-errosLeft)), 510,40); 
 }
 
 function verificarLetraElegida(key){
@@ -108,14 +75,3 @@ document.onkeydown = (e) => {
         }
     }
 }
-
-const btn = document.getElementById("nuevoJuego");
-btn.addEventListener("click", (event)=>{
-    location.reload();
-});
-
-var butn = document.getElementById("rendirse");
-butn.addEventListener("click", (event) =>{
-    dibujarCanvasTotal()
-    alerta()
-})
